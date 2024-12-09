@@ -39,3 +39,30 @@ cd vite-project
 npm install
 npm run dev
 ```
+
+# 錯誤訊息 Vite PWA Plugin does not register the service worker and gives me a 404 error status.
+Vite PWA Plugin does not register the service worker and gives me a 404 error status. I'm trying to make a PWA application with the vite plugin and...
+Vite PWA 外掛程式不會註冊服務工作者並給我一個 404 錯誤狀態。
+
+執行以下指令 => 安裝vite-plugin-pwa
+```
+npm i -D vite-plugin-pwa
+```
+vite.config.js增加
+<ul>
+    <li>引入vite-plugin-pwa解構VitePWA</li>
+    <li>plugins內新增VitePWA({ ... })</li>
+</ul>
+```
+import { VitePWA } from "vite-plugin-pwa"
+export default defineConfig({
+    plugins: [
+        VitePWA({ registerType: 'autoUpdate' })
+    ],
+    server: {
+        hmr: {
+        overlay: false
+        }
+    },
+})
+```
