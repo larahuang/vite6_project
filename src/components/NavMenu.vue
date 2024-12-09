@@ -14,11 +14,7 @@
 
 <script setup lang="ts">
 import {ref,onMounted} from 'vue';
-
-    interface menuType{
-        id:string,
-        title:string,
-    }
+import { menuType } from '../types/main';
     const menus =ref<menuType[]>([
         { id:'01',title: '首頁' },
         { id:'03',title: '關於我們' },
